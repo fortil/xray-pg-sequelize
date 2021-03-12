@@ -1,5 +1,6 @@
 var AWSXRay = require('aws-xray-sdk');
+var capturePostgres = require('aws-xray-sdk-postgres');
 
 module.exports = function xRayPgSequelize() {
-    return AWSXRay.capturePostgres(require('pg'));
+    return capturePostgres(require('pg'));
 };
